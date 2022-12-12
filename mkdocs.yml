@@ -10,6 +10,7 @@ nav:
         - FreiCar Agent: 'nodes/freicar_agent.md'
 #        - Competition Rules: 'competition_rules.md'
         # - Code Style: 'code_style.md'
+        - Installation: 'installation.md'
     - Mechanical Assembly:
         - Subassemblies: 'assembly/index.md'
 #        - Subassembly - ESC: 'assembly/esc_case.md'
