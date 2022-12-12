@@ -5,8 +5,7 @@
 ## **Powering On:**
 
 *Power Panel*
-
-![Side_panel.jpg](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/Side_panel.jpg)
+![Side_panel.png](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/Side_panel.jpg)
 
 - Hold the motor button down for 1 ~ 2 seconds until it lights blue.
 - Switch the PC switch to *I* state or alternatively connect the adapter cable
