@@ -6,6 +6,6 @@ Website: https://freicar.readthedocs.io/
 
 This site can be tested locally by running:
 ```bash
-pip install mkdocs
+pip install -r requirements.txt
 mkdocs serve
 ```
