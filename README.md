@@ -1,3 +1,7 @@
+[![Documentation Status](https://readthedocs.org/projects/freicar/badge/?version=latest)](https://freicar.readthedocs.io/en/latest/?badge=latest)
+
+# FreiCAR Documentation
+
 This place hosts all necessary documentation for the FreiCAR course of the University of Freiburg.
 
 Website: https://freicar.readthedocs.io/
