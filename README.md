@@ -1,6 +1,6 @@
 This place hosts all necessary documentation for the FreiCAR course of the University of Freiburg.
 
-Website: https://freicar-docs.readthedocs.io/
+Website: https://freicar.readthedocs.io/
 
 ### Development
 
