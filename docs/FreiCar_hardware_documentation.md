@@ -43,6 +43,16 @@ The charger menu should look like the following
 ![PC_channel_annotated.png](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/PC_channel_annotated.png)
 ![motor_channel_annotated.png](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/motor_channel_annotated.png)
 
+**Stop Charging**
+
+When the batteries are fully charged, the respective channel color turns green followed by a blue tick, a short beep sound, then the charging stops.
+
+To willingly stop the charging process:
+<ol>
+<li>Select the target channel.</li>
+<li>Use the task scroller to navigate to 'Stop' and select it.</li>
+</ol>
+
 **Background Information**
 
 *Balancing*: Each lithium ion battery has a number of cells, that are connected in series. The balancer cable gives the charger information about the voltage levels of the individual cells. The charger makes sure that the cells are always approximately equal when in balancer charging mode.
@@ -81,6 +91,16 @@ The charger menu should look like the following
     The motor turns itself off automatically approximately every 20 minutes. This results in a lost communication between the PC and the motor. To stop the alarm, hold the motor button down for 1~2 seconds until it lights blue again.
 - Low battery (lower frequency alarm):
     Power off the car and charge it.
+
+### **Powering off**
+
+**Steps**
+<ol>
+<li>Shut down the PC.</li>
+<li>Switch the PC to *O* state or disconnect the adapter.</li>
+<li>Press the motor button for 1~2 seconds until the blue light disappears.</li>
+</ol>
+
 ## **II. Documentation**
 
 ### Powering System
