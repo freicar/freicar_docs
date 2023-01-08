@@ -21,8 +21,7 @@
 *Charging Overview*
 ![Charger_overview_annotated.png](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/Charger_overview_annotated.png)
 
-*Balancer connection*
-
+*Balancer connection*  
 ![balancer_socket.png](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/balancer_socket.png)
 
 **Steps**
@@ -31,12 +30,19 @@
 <li>Click the task button.</li>
 <li>Select channel 1 or 2.</li>
 <li>Select a current of 2 A (recommended is: 25% of battery capacity).</li>
-<li>Number of cells is detected automatically.</li>
+<li>Make sure the number of cells is 4 for the motor batteries and 6 for the PC battery.</li>
+<li>Make sure the task is charge</li>
+<li>Use the task scroller to navigate to 'Start' and select it.</li>
 <li>Repeat with the second channel.</li>
 <li>Click on the channel button again to get back to the two channels view.</li>
 <li>There is a percentage indicator for the charging state on the top right.</li>
 <li>The charger decreases the charging current gradually as the charging process approaches its end.</li>
 </ol>
+
+The charger menu should look like the following
+![PC_channel_annotated.png](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/PC_channel_annotated.png)
+![motor_channel_annotated.png](https://github.com/vniclas/freicar_docs/raw/master/images/hardware_documentation/motor_channel_annotated.png)
+
 **Background Information**
 
 *Balancing*: Each lithium ion battery has a number of cells, that are connected in series. The balancer cable gives the charger information about the voltage levels of the individual cells. The charger makes sure that the cells are always approximately equal when in balancer charging mode.
