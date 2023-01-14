@@ -19,6 +19,6 @@ nav:
 #        - Subassembly - Front Sensors: 'assembly/front_sensor.md'
 #        - Subassembly - Rear Sensors: 'assembly/rear_sensor.md'
         - Car Integration: 'assembly/car_asm.md'
-        - Starting, Charging,..: 'FreiCar_hardware_documentation.md'
+        - Starting, Charging,..: 'starting_charging_etc.md'
 
 theme: readthedocs

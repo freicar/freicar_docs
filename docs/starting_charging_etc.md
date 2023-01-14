@@ -1,28 +1,28 @@
-# FreiCar hardware documentation
+# FreiCar Usage and Hardware Documentation
 
 ## I. Usage
 
 ### **Powering on**
 
 *Power Panel*
-![Side_panel.png](./images/hardware_documentation/Side_panel.png)
+![Side_panel.png](/images/hardware_documentation/Side_panel.png)
 
 - Hold the motor button down for 1 ~ 2 seconds until it lights blue.
 - Switch the PC switch to *I* state or alternatively connect the adapter cable. Note that *II* state is unused.
     
-    ![adapter_cable.jpg](./images/hardware_documentation/adapter_cable.jpg)
+    ![adapter_cable.jpg](/images/hardware_documentation/adapter_cable.jpg)
     
 - The panel should look like below after powering on.
 
-![Powered_on_vehicle.jpg](./images/hardware_documentation/Powered_on_vehicle.jpg)
+![Powered_on_vehicle.jpg](/images/hardware_documentation/Powered_on_vehicle.jpg)
 
 ### **Charging**
 
 *Charging Overview*
-![Charger_overview_annotated.png](./images/hardware_documentation/Charger_overview_annotated.png)
+![Charger_overview_annotated.png](/images/hardware_documentation/Charger_overview_annotated.png)
 
 *Balancer connection*  
-![balancer_socket.png](./images/hardware_documentation/balancer_socket.png)
+![balancer_socket.png](/images/hardware_documentation/balancer_socket.png)
 
 **Steps**
 <ol>
@@ -40,8 +40,8 @@
 </ol>
 
 The charger menu should look like the following
-![PC_channel_annotated.png](./images/hardware_documentation/PC_channel_annotated.png)
-![motor_channel_annotated.png](./images/hardware_documentation/motor_channel_annotated.png)
+![PC_channel_annotated.png](/images/hardware_documentation/PC_channel_annotated.png)
+![motor_channel_annotated.png](/images/hardware_documentation/motor_channel_annotated.png)
 
 **Stop Charging**
 
@@ -146,7 +146,7 @@ The motor button connects or disconnects the anti-spark switch device. The later
 
 ### **Joystick Controller and Receiver**
 
-![rf.png](./images/hardware_documentation/rf.png)
+![rf.png](/images/hardware_documentation/rf.png)
 
 - The RF receiver has two channels. These are connected to the base board. The two channels are marked on the board as throttle and steering.
 
@@ -154,12 +154,12 @@ The motor button connects or disconnects the anti-spark switch device. The later
 
 **Joystick**
 
-![joystick.png](./images/hardware_documentation//joystick.png)
+![joystick.png](/images/hardware_documentation//joystick.png)
 
 - First turn the joystick on by sliding the switch to the on state.
 - There exists three analog knobs on the joystick. These set an initial offset for steering, the steering sensitivity, and an initial offset for the throttle.
 
-![joystick_side.png](./images/hardware_documentation/joystick_side.png)
+![joystick_side.png](/images/hardware_documentation/joystick_side.png)
 
 - The large side analog knob controls the steering of the vehicle. Rotate it to left or right to rotate the wheel axle accordingly.
     
@@ -171,11 +171,11 @@ The motor button connects or disconnects the anti-spark switch device. The later
 
 ### **Servo Motor**
 
-![servo.png](./images/hardware_documentation/servo.png)
+![servo.png](/images/hardware_documentation/servo.png)
 
 The servo motor has a rotating knob. A plastic flat rod is fitted on top of knob to connect the servo to the wheel axle mechanically.
 
-![servo_rod.png](./images/hardware_documentation/servo_rod.png)
+![servo_rod.png](/images/hardware_documentation/servo_rod.png)
 
 To set the neutral angle of the wheel axle:
 
@@ -192,7 +192,7 @@ The vehicle can be controlled by an RF joystick. It has a base board to route po
 
 **Base board**
 
-![board_annotated.png](./images/hardware_documentation/board_annotated.png)
+![board_annotated.png](/images/hardware_documentation/board_annotated.png)
 
 - Processes and controls signals through a mounted itsy-bitsy arduino microcontroller.
 - Raises different alarms through a mounted buzzer.
@@ -205,7 +205,7 @@ The vehicle can be controlled by an RF joystick. It has a base board to route po
 
 **Arduino Microcontroller**
 
-![microcontroller.png](./images/hardware_documentation/microcontroller.png)
+![microcontroller.png](/images/hardware_documentation/microcontroller.png)
 
 Mounted on the base board and connected to the PC using USB.
 
