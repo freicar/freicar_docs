@@ -16,6 +16,10 @@
 
 ![Powered_on_vehicle.jpg](./images/hardware_documentation/Powered_on_vehicle.jpg)
 
+**<span style="color:red">Attention!</span>**
+
+- Turn the car's corresponding [*Joystick*](#joystick-controller-and-receiver) (radio transmitter) on <strong>before</strong> powering on the car. This is to avoid any sudden movements due to the car's radio receiver receiving noise signals without proper communication with the transmitter.
+
 ### **Charging**
 
 *Charging Overview*
@@ -100,6 +104,10 @@ To willingly stop the charging process:
 <li>Switch the PC to *O* state or disconnect the adapter.</li>
 <li>Press the motor button for 1~2 seconds until the blue light disappears.</li>
 </ol>
+
+**<span style="color:red">Attention!</span>**
+
+- Turn the car's corresponding [*Joystick*](#joystick-controller-and-receiver) (radio transmitter) off <strong>after</strong> powering off the car. This is to avoid any sudden car movements due to the car's radio receiver receiving noise signals without proper communication with the transmitter.
 
 ## **II. Documentation**
 
