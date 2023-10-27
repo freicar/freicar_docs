@@ -164,7 +164,8 @@ The motor button connects or disconnects the anti-spark switch device. The later
 
 ![joystick.png](./images/hardware_documentation//joystick.png)
 
-- First turn the joystick on by sliding the switch to the on state.
+- Before doing anything, open the joystick cover and turn all trim knobs to a zero state to prevent miscalibration from the start.
+- Next, turn the joystick on by sliding the power switch to the ON state.
 - There exists three analog knobs on the joystick. These set an initial offset for steering, the steering sensitivity, and an initial offset for the throttle.
 
 ![joystick_side.png](./images/hardware_documentation/joystick_side.png)
