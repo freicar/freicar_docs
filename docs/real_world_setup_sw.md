@@ -11,7 +11,8 @@
 <img src="https://github.com/vniclas/freicar_docs/raw/master/images/vive_tracker.jpg" alt="lighthouse" width="200"/>
 5. Login on *freicar-base* 
 6. Start standalone Steam as a background process
-7. Start SteamVR → check 4 lighthouses, glasses, reference tracker and the number of car-wise trackers
+7. Please ignore all warnings and errors issued by Steam. 
+8. Start SteamVR → check 4 lighthouses, glasses, reference tracker and the number of car-wise trackers
 
 ## Network Setup
 
