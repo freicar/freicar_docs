@@ -32,11 +32,11 @@
 
 ## Devices drivers
 
-- After following https://freicar-docs.readthedocs.io/environment/ **Installation**, go to `~/freicar_docker/freicar_ws/src/freicar_drivers/udevs` and run `./copy_to_system.sh`. Use `chmod +x` on the file if necessary.
+- After following the [FreiCAR installation](/environment/), go to the directory where you cloned the `docker` repository, then to `freicar_ws/src/drivers/udevs` and run `./copy_to_system.sh`. Use `chmod +x` on the file if necessary.
 
 ## Changes to docker
 
 - `fcc` into docker, then go to `~/freicar_ws/src/freicar_drivers/zed_factory_calibrations` and run `./copy_zed_calibrations.sh`.
-- In a system terminal, go to `~/freicar_docker` and run `./commit_changes.bash`
+- In a system terminal, go to the `docker` directory and run `./commit_changes.bash`
 
 ```

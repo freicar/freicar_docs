@@ -10,7 +10,7 @@ The simulator needs always to run if you want to start your own programs. Your R
 In this launch file also the map is specified. See down below how to change it.
 
 ## Updating the Simulator
-We might update the simulator from time to time. When a new simulator version comes out you can upgrade the simulator by running ```update_simulator.bash``` from the docker directory.
+We might update the simulator from time to time. When a new simulator version comes out you can upgrade the simulator by running ```update_simulator.bash``` from the docker directory (only accessible from the host system).
 
 ## Simulated Sensors/Actuators
 ### Throttle, Steering, Brake

@@ -1,4 +1,6 @@
 # FreiCar Agent
+*2024-10-06 tsteinke: this page describes the old agent template and is outdated. Please refer to the README and comments in the [new agent package](https://rlgit.informatik.uni-freiburg.de/freicar/base/-/tree/master/freicar_agent) for now.*
+
 This node performs the bare minimum required for running an agent in the FreiCar software stack. This will be your starting point.
 As mentioned in the overview, this node by default takes care of the following tasks:
 
