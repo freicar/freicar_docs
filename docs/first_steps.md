@@ -9,7 +9,7 @@ The first time you want to start the FreiCar framework, you have to build all RO
 1. Go to `~/freicar_ws` and run `catkin build`.
 2. If the build fails due to missing dependencies, try running `caktin build` again. Due to interdependencies between FreiCAR packages, multiple builds may be necessary the first time.
 3. Once everything is built successfully, you have to re-source by typing `source devel/setup.bash`.
-2. To test the setup, you can try to start the simulator by launching ```start_carla.launch```. For this please read the [Simulator section](/simulator) section.
+2. To test the setup, you can try to start the simulator by launching ```start_carla.launch```. For this please read the [Simulator section](../simulator) section.
 
 Now that you have built everything, some tips on using `catkin` in the future:
 
@@ -25,7 +25,7 @@ More details can be found in the [Catkin Cheatsheet](https://catkin-tools.readth
 
 ## Programming Your Own Code
 
-We prepared a template node *Freicar Agent* (see `freicar_ws/src/base/freicar_agent/`) for controlling the real-world cars. It shows you how to send the "Track Request", get the localization pose from the [Vive tracking system](/vive_tracking) and send control commands to the hardware.
+We prepared a template node *Freicar Agent* (see `freicar_ws/src/base/freicar_agent/`) for controlling the real-world cars. It shows you how to send the "Track Request", get the localization pose from the [Vive tracking system](../vive_tracking) and send control commands to the hardware.
 
 See the documentation on the *Real-World Cars* for how to start and connect to the hardware cars, start the sensor stack and finally the agent node.
 

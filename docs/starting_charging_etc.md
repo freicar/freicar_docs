@@ -16,7 +16,7 @@
 
 **<span style="color:red">Attention!</span>**
 
-- Turn the car's corresponding [*remote control*](/remote) (radio transmitter) on <strong>before</strong> powering on the car. This is to avoid any sudden movements due to the car's radio receiver receiving noise signals without proper communication with the transmitter.
+- Turn the car's corresponding [*remote control*](../remote) (radio transmitter) on <strong>before</strong> powering on the car. This is to avoid any sudden movements due to the car's radio receiver receiving noise signals without proper communication with the transmitter.
 
 ## **Charging**
 
@@ -105,5 +105,5 @@ To willingly stop the charging process:
 
 **<span style="color:red">Attention!</span>**
 
-- Turn the car's corresponding [*remote control*](/remote) (radio transmitter) off <strong>after</strong> powering off the car. This is to avoid any sudden car movements due to the car's radio receiver receiving noise signals without proper communication with the transmitter.
+- Turn the car's corresponding [*remote control*](../remote) (radio transmitter) off <strong>after</strong> powering off the car. This is to avoid any sudden car movements due to the car's radio receiver receiving noise signals without proper communication with the transmitter.
 

@@ -43,7 +43,7 @@ hand_brake: false"
 
 Try changing the throttle and steering values and sending the message by pressing Enter. You will see the car move.
 
-**IMPORTANT:** please only do this in the simulation. If you send steering commands to the real-world cars manually, they might accelerate uncontrollably and cause damage! Always follow the [safety rules](/safety_rules) when handling the real cars.
+**IMPORTANT:** please only do this in the simulation. If you send steering commands to the real-world cars manually, they might accelerate uncontrollably and cause damage! Always follow the [safety rules](../safety_rules) when handling the real cars.
 
 
 
