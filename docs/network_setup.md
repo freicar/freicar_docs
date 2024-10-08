@@ -32,7 +32,7 @@ This lets you view published topics wrt. the ROS master that is running on *frei
 5. To visualize the trackers and other data, run rviz with the default config: ```rviz```
 
 ### *FreiCARs*
-Finally, [start](/starting_charging_etc/) one of the cars and:
+Finally, [start](../starting_charging_etc/) one of the cars and:
 
 1. SSH from a student computer to the car via ```ssh freicar@freicarX (name of car)```.
 If no SSH connection is possible, please check that the car is connected to the wifi network freicar_5g (to do so connect a monitor, keyboard, and mouse)
@@ -47,4 +47,4 @@ If no SSH connection is possible, please check that the car is connected to the 
 3. Start ```rviz``` on student computer, add respective topics and check for validity.
 4. Optionally start an agent `roslaunch freicar_agent freicar_agent.launch agent_name:=freicar_X`. See the launch file for other parameters.
 
-    **WARNING:** always place the car on a wood block and turn on the RC remote before launching untested agents. Please observe the [safety rules](/safety_rules).
+    **WARNING:** always place the car on a wood block and turn on the RC remote before launching untested agents. Please observe the [safety rules](../safety_rules).

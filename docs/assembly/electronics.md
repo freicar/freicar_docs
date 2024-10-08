@@ -43,7 +43,7 @@ The motor button connects or disconnects the anti-spark switch device. The later
 
 ### **Joystick Controller and Receiver**
 
-![rf.png](/images/hardware_documentation/rf.png)
+![rf.png](../images/hardware_documentation/rf.png)
 
 - The RF receiver has two channels. These are connected to the base board. The two channels are marked on the board as throttle and steering.
 
@@ -51,11 +51,11 @@ The motor button connects or disconnects the anti-spark switch device. The later
 
 ### **Servo Motor**
 
-![servo.png](/images/hardware_documentation/servo.png)
+![servo.png](../images/hardware_documentation/servo.png)
 
 The servo motor has a rotating knob. A plastic flat rod is fitted on top of knob to connect the servo to the wheel axle mechanically.
 
-![servo_rod.png](/images/hardware_documentation/servo_rod.png)
+![servo_rod.png](../images/hardware_documentation/servo_rod.png)
 
 To set the neutral angle of the wheel axle:
 
@@ -72,7 +72,7 @@ The vehicle can be controlled by an RF joystick. It has a base board to route po
 
 **Base board**
 
-![board_annotated.png](/images/hardware_documentation/board_annotated.png)
+![board_annotated.png](../images/hardware_documentation/board_annotated.png)
 
 - Processes and controls signals through a mounted itsy-bitsy arduino microcontroller.
 - Raises different alarms through a mounted buzzer.
@@ -85,7 +85,7 @@ The vehicle can be controlled by an RF joystick. It has a base board to route po
 
 **Arduino Microcontroller**
 
-![microcontroller.png](/images/hardware_documentation/microcontroller.png)
+![microcontroller.png](../images/hardware_documentation/microcontroller.png)
 
 Mounted on the base board and connected to the PC using USB.
 

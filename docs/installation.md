@@ -34,7 +34,7 @@ Description of the initial setup for the FreiCAR PCs. As a course participant, p
 
 ## Devices drivers
 
-- After following the [FreiCAR installation](/environment/), go to the directory where you cloned the `docker` repository, then to `freicar_ws/src/drivers/udevs` and run `./copy_to_system.sh`. Use `chmod +x` on the file if necessary.
+- After following the [FreiCAR installation](../environment/), go to the directory where you cloned the `docker` repository, then to `freicar_ws/src/drivers/udevs` and run `./copy_to_system.sh`. Use `chmod +x` on the file if necessary.
 
 ## Changes to docker
 
