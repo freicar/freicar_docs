@@ -1,4 +1,6 @@
 # FreiCar Map
+*2024-10-06 tsteinke: this page is outdated. It describes the old map structure, which is still used in the carla system, but not for the real-world cars.*
+
 A map typically contains all the relevant information about the environment. Our map has a hierarchical structure that provides access on multiple levels, depending on the requirement. The current structure can describe:
 
 * lanes

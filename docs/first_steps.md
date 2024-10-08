@@ -2,27 +2,35 @@
 
 This section explains how to start with developing in the FreiCar framework.
 
-1. The first time, you want to start the FreiCar framework, you have to build all ROS packages. Go to `~/freicar_ws` and run `catkin build`. Afterwards, you might have to resource by typing `source devel/setup.bash`.
-2. As the first step you should start the simulator by starting ```local_comp_launch.launch```. For this please read the [Simulator section](https://freicar-docs.readthedocs.io/simulator/) section.
-3. Now the simulator should be started and you are ready to spawn your car.
- Run ``` roslaunch freicar_agent spawn_car.launch name:=freicar_anyname tf_name:=freicar_anyname spawn/x:=0 spawn/y:=0 spawn/z:=0 spawn/heading:=20 use_yaml_spawn:=true sync_topic:=! ```.
-  Now your car "freicar_anyname" is spawned in the world and all sensors of the respective car are running. The car-name should be changeable throughout the course, so do not hardcode the name in your future own programs but use always ros-parameters.
-4. Now start the [Rviz](http://wiki.ros.org/rviz#Overview) tool to visualize the world and the cars sensors. You should explore what data is available with ```rostopic list```
+## Building
 
-# Start Programming your own Code
+The first time you want to start the FreiCar framework, you have to build all ROS packages:
 
-For the FreiCar Course you can freely program any ROS node you want to have. However one node has to send the "Track Request".
+1. Go to `~/freicar_ws` and run `catkin build`.
+2. If the build fails due to missing dependencies, try running `caktin build` again. Due to interdependencies between FreiCAR packages, multiple builds may be necessary the first time.
+3. Once everything is built successfully, you have to re-source by typing `source devel/setup.bash`.
+2. To test the setup, you can try to start the simulator by launching ```start_carla.launch```. For this please read the [Simulator section](/simulator) section.
 
-We prepared a template node [Freicar Agent](https://freicar-docs.readthedocs.io/nodes/freicar_agent/) for you that sends the "Track Request" and shows how to initialize an HD map, get the sensor data or requests a localization-pose from the tf-system. This node is a good starting point if you want to program in C++.
+Now that you have built everything, some tips on using `catkin` in the future:
 
-Overall, either you base on the template Freicar Agent node that has this functionality already, or you simply run the Freicar Agent node as it is in order to send the track request.
+- Run `catkin build --this` from any package directory to build only this package instead of the entire workspace.
+- If a package is causing trouble with the build (e.g. name collisions) and you're sure you don't need it for now, run `touch CATKIN_IGNORE` inside the **package root directory** to exclude it from future builds. This creates an empty file called `CATKIN_IGNORE`, which you can delete if you want to build the package again.
+- If a build is failing without apparent reason, try to rebuild the entire workspace:
 
-Running the Freicar Agent node can be done with (NOTE: This also spawns the car so use this command instead of spawn_car.launch): ```roslaunch freicar_agent sim_agent.launch name:=freicar_anyname tf_name:=freicar_anyname spawn/x:=0 spawn/y:=0 spawn/z:=0 spawn/heading:=20 use_yaml_spawn:=true sync_topic:=!```
+        catkin clean
+        catkin build
+        source ~/freicar_ws/devel/setup.bash
 
-You are allowed to use any code from the freicar_base submodule. Read the sections [Freicar Overview](https://freicar-docs.readthedocs.io/nodes/freicar_overview/) and [Freicar Map](https://freicar-docs.readthedocs.io/nodes/freicar_map/) to read which nodes are available.
+More details can be found in the [Catkin Cheatsheet](https://catkin-tools.readthedocs.io/en/latest/cheat_sheet.html).
+
+## Programming Your Own Code
+
+We prepared a template node *Freicar Agent* (see `freicar_ws/src/base/freicar_agent/`) for controlling the real-world cars. It shows you how to send the "Track Request", get the localization pose from the [Vive tracking system](/vive_tracking) and send control commands to the hardware.
+
+See the documentation on the *Real-World Cars* for how to start and connect to the hardware cars, start the sensor stack and finally the agent node.
 
 # Code Style
 
-Always make your own **private** repository for your software. No changes to the submodules ``` freicar_base```, ```freicar_exercises``` or ```freicar_executables``` are allowed.
+Always make your own **private** repository for your software. No changes to the submodules ``` base```, ```drivers``` or ```executables``` are allowed.
  
 If you want to use code from these submodules you are allowed to copy these nodes, improve them, rename them and push them in your repository. 

@@ -6,11 +6,49 @@ The simulator together with some necessary ROS-nodes can be started by running:
 
 ```roslaunch freicar_launch start_carla.launch```
 
-The simulator needs always to run if you want to start your own programs. Your ROS-nodes must be started in a separate launch file.
-In this launch file also the map is specified. See down below how to change it.
+It takes a few seconds to launch. Only once the line `waypoint_service active` appears in the terminal is the simulator ready.
+
+The simulator needs always to run first if you want to start your own programs.
+Your ROS-nodes must be started in a separate launch file.  In this launch file
+also the map is specified. See down below how to change it.
+
+### Launching a Simulated FreiCAR
+
+Now the simulator should be started and you are ready to spawn a car. Run:
+
+`roslaunch freicar_launch spawn_sim_car.launch agent_name:=freicar_X`
+
+Now your car "freicar_X" is spawned in the world and all sensors of the respective car are running. The car-name should be changeable throughout the course, so do not hardcode the name in your future own programs but use always ros-parameters.
+
+Now start the [Rviz](http://wiki.ros.org/rviz#Overview) tool to visualize the world and the cars sensors. You can add topics to rviz to visualize the data published on them. You can see which topics are available with `rostopic list`.
+
+### Controlling a Simulated FreiCAR
+The topic `/freicar_X/control` is especially interesting, since this is where you can publish throttle and steering commands to control the car. During the course, this will be done automatically by your ROS nodes, but for now you can experiment with the settings by entering:
+
+`rostopic pub /freicar_X/control <TAB> <TAB>` (press TAB twice)
+
+The Auto-Completion should provide you with a message template looking like this:
+
+```
+freicar@ovomaltine:~$ rostopic pub /freicar_X/control raiscar_msgs/ControlCommand "header:
+  seq: 0
+  stamp: {secs: 0, nsecs: 0}
+  frame_id: ''
+steering: 0.0
+throttle: 0.0
+brake: 0.0
+throttle_mode: 0
+hand_brake: false"
+```
+
+Try changing the throttle and steering values and sending the message by pressing Enter. You will see the car move.
+
+**IMPORTANT:** please only do this in the simulation. If you send steering commands to the real-world cars manually, they might accelerate uncontrollably and cause damage! Always follow the [safety rules](/safety_rules) when handling the real cars.
+
+
 
 ## Updating the Simulator
-We might update the simulator from time to time. When a new simulator version comes out you can upgrade the simulator by running ```update_simulator.bash``` from the docker directory.
+We might update the simulator from time to time. When a new simulator version comes out you can upgrade the simulator by running ```update_simulator.bash``` from the docker directory (only accessible from the host system).
 
 ## Simulated Sensors/Actuators
 ### Throttle, Steering, Brake
