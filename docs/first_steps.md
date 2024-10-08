@@ -2,20 +2,32 @@
 
 This section explains how to start with developing in the FreiCar framework.
 
-1. The first time, you want to start the FreiCar framework, you have to build all ROS packages. Go to `~/freicar_ws` and run `catkin build`. If the build fails due to missing dependencies, try running `caktin build` again. Due to interdependencies between FreiCAR packages, multiple builds may be necessary the first time. Once everything is built successfully, you have to re-source by typing `source devel/setup.bash`.
-2. As the first step you should start the simulator by starting ```start_carla.launch```. For this please read the [Simulator section](/simulator) section.
-3. Now the simulator should be started and you are ready to spawn your car.
- Run ```roslaunch freicar_launch spawn_sim_car.launch agent_name:=freicar_anyname spawn/x:=0 spawn/y:=0 spawn/z:=0 spawn/heading:=20 use_yaml_spawn:=true ```.
-  Now your car "freicar_anyname" is spawned in the world and all sensors of the respective car are running. The car-name should be changeable throughout the course, so do not hardcode the name in your future own programs but use always ros-parameters.
-4. Now start the [Rviz](http://wiki.ros.org/rviz#Overview) tool to visualize the world and the cars sensors. You should explore what data is available with ```rostopic list```
+## Building
 
-# Start Programming your own Code
+The first time you want to start the FreiCar framework, you have to build all ROS packages:
 
-For the FreiCar Course you can freely program any ROS node you want to have.
+1. Go to `~/freicar_ws` and run `catkin build`.
+2. If the build fails due to missing dependencies, try running `caktin build` again. Due to interdependencies between FreiCAR packages, multiple builds may be necessary the first time.
+3. Once everything is built successfully, you have to re-source by typing `source devel/setup.bash`.
+2. To test the setup, you can try to start the simulator by launching ```start_carla.launch```. For this please read the [Simulator section](/simulator) section.
 
-We prepared a template node [Freicar Agent](/nodes/freicar_agent/) for controlling the real-world cars. It shows you how to send the "Track Request", get the localization pose from the [Vive tracking system](/real_world_setup_sw/#vive-tracking) and send control commands to the hardware. This node is a good starting point if you want to program in C++.
+Now that you have built everything, some tips on using `catkin` in the future:
 
-See the chapter on [real-world cars](/real_world_setup_sw/#test-setup) for how to start and connect to the hardware cars, start the sensor stack and finally the agent node.
+- Run `catkin build --this` from any package directory to build only this package instead of the entire workspace.
+- If a package is causing trouble with the build (e.g. name collisions) and you're sure you don't need it for now, run `touch CATKIN_IGNORE` inside the **package root directory** to exclude it from future builds. This creates an empty file called `CATKIN_IGNORE`, which you can delete if you want to build the package again.
+- If a build is failing without apparent reason, try to rebuild the entire workspace:
+
+        catkin clean
+        catkin build
+        source ~/freicar_ws/devel/setup.bash
+
+More details can be found in the [Catkin Cheatsheet](https://catkin-tools.readthedocs.io/en/latest/cheat_sheet.html).
+
+## Programming Your Own Code
+
+We prepared a template node *Freicar Agent* (see `freicar_ws/src/base/freicar_agent/`) for controlling the real-world cars. It shows you how to send the "Track Request", get the localization pose from the [Vive tracking system](/vive_tracking) and send control commands to the hardware.
+
+See the documentation on the *Real-World Cars* for how to start and connect to the hardware cars, start the sensor stack and finally the agent node.
 
 # Code Style
 

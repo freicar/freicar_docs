@@ -1,4 +1,6 @@
-# Ubuntu 20.x installation
+# Ubuntu 20.x installation on FreiCAR PC
+Description of the initial setup for the FreiCAR PCs. As a course participant, please ignore this page. The cars will already be set up for you.
+
 ## Requirements
 - Assembled and powered car PC
 -  8 GB flash drive

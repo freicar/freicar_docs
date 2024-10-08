@@ -3,22 +3,27 @@ nav:
     - Software:
         - Home: 'index.md'
         - Environment: 'environment.md'
-        - Simulator: 'simulator.md'
         - First Steps: 'first_steps.md'
-        - FreiCar Overview: 'nodes/freicar_overview.md'
+        - Simulator: 'simulator.md'
+        - Software Overview: 'nodes/freicar_overview.md'
         # - FreiCar Map: 'nodes/freicar_map.md'
         # - FreiCar Agent: 'nodes/freicar_agent.md'
 #        - Competition Rules: 'competition_rules.md'
         # - Code Style: 'code_style.md'
-        - Installation: 'installation.md'
-        - Real-World Cars: 'real_world_setup_sw.md'
-    - Mechanical Assembly:
+    - Real-World Cars:
+        - Safety: 'safety_rules.md'
+        - Vive Tracking: 'vive_tracking.md'
+        - Starting, Charging,..: 'starting_charging_etc.md'
+        - Remote Control: 'remote.md'
+        - ROS Network Setup: 'network_setup.md'
+        - Ubuntu Installation: 'installation.md'
+    - Car Assembly:
         - Subassemblies: 'assembly/index.md'
 #        - Subassembly - ESC: 'assembly/esc_case.md'
 #        - Subassembly - PC: 'assembly/pc_case.md'
 #        - Subassembly - Front Sensors: 'assembly/front_sensor.md'
 #        - Subassembly - Rear Sensors: 'assembly/rear_sensor.md'
         - Car Integration: 'assembly/car_asm.md'
-        - Starting, Charging,..: 'starting_charging_etc.md'
+        - Electronics: 'assembly/electronics.md'
 
 theme: readthedocs

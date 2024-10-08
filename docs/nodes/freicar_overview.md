@@ -51,7 +51,7 @@ ___
 This node spawns an arbitrary number of scripted agents in the environment. These agents generate random plans and follow them while obeying right of way rules and avoiding collisions. They perform these tasks by using the `FreiCarAgentLocalization` messages from other agents. A pre-compiled version of this node is available in the repository `executables`.
 
 ### 3.3 FreiCar Carla Map
-This node contains the core map structure and additional services that are built on top of it. You can find a more detailed explanation [here](/nodes/freicar_map).
+This node contains the core map structure (used only by the simulated environment) and additional services that are built on top of it. 
 
 ### 3.4 FreiCar Setting
 This node is responsible for applying the simulation settings and setting a couple of global ROS parameters.
