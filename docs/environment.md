@@ -45,7 +45,7 @@ To set up everything on your pc you will need:
 
 - A recent pc with a Nvidia GPU (better than GTX 1050 ti)
 - Ubuntu >=18.04
-- 50GB free space
+- 100GB free space
 
 In the following we describe the individual steps to make your pc ready!
 
@@ -53,10 +53,10 @@ In the following we describe the individual steps to make your pc ready!
     - `sudo apt-get purge nvidia*` get rid of your old driver
     - `sudo apt-get install nvidia-driver-460`
     - restart your pc
-- Clone the following repo to your pc (the hdd should have 50 gb free)
+- Clone the following repo to your pc (the hdd should have 100 gb free to complete the docker build, as it will download a lot of dependencies)
     - `git clone --recurse-submodules https://rlgit.informatik.uni-freiburg.de/freicar/docker.git`
 - enter the cloned repo : `cd docker`
 - install docker-ce and nvidia-docker with our script: `./install_docker.bash`
 - Restart your computer (otherwise the docker demon might not be started)
-- build the entire environment and download the simulator (this will take a while, >1h): `./setup.bash` (You will be asked for your sudo password at some point in order to install the docker image to your pc)
+- build the entire environment and download the simulator (this will take a while, >30min on a decent PC): `./setup.bash` (You will be asked for your sudo password at some point in order to install the docker image to your pc)
 - You are all set! :) 
