@@ -30,6 +30,7 @@ If one of the steps fail, first try restarting Steam and SteamVR. If the issue i
 
 ## 3. Publish to ROS
 Note: different from the other computers, on freicar-base you do not need to run ROS commands inside the docker (**no** `fcc` or `fct` required!). So just open a regular terminal and:
+
 1. Start a ROS Core server: `roscore`
 2. In a seperate terminal, start the Vive tracking script: `rosrun freicar_vr_tracking vive_tracking.py`
 3. Run `rostopic list` to check that the odometry topic(s) are available. The poses are published to the `/tf` topic (if in doubt, check Rviz or [tf_echo](https://wiki.ros.org/tf/Debugging%20tools#tf_echo)).
