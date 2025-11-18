@@ -31,7 +31,7 @@
 <li>Connect the dean plugs and the balancer cables for both battery systems.</li>
 <li>Click the task button.</li>
 <li>Select channel 1 or 2.</li>
-<li>Select a current of 2 A (recommended is: 25% of battery capacity).</li>
+<li>Select a current of 4.0 A (recommended is: 50% of battery capacity).</li>
 <li>Make sure the number of cells is 4 for the motor batteries and 6 for the PC battery.</li>
 <li>Make sure the task is charge</li>
 <li>Use the task scroller to navigate to 'Start' and select it.</li>
@@ -61,7 +61,7 @@ To willingly stop the charging process:
 
 *Nominal Voltage*: The *PC battery* has 6 cells with 3.7 V nominal voltage each, that sums to a total of 22.2 V. The 2 *motor batteries* combined have 4 cells with 3.7 V nominal voltage each, that sums to a total of 14.8 V.
 
-*Maximum and minimum voltages*: The individual cells level shouldn’t fall below 3 V and shouldn’t exceed 4.2 V.
+*Maximum and minimum voltages*: The individual cells level shouldn’t fall below 3.2 V and shouldn’t exceed 4.2 V. However we require you to keep the individual cell voltages above 3.6V.
 
 **<span style="color:red">Attention!</span>**
 
