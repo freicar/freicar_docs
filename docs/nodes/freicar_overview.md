@@ -23,7 +23,7 @@ The package `freicar_msgs` contains message and service definitions for communic
 ## 2 Nodes Relevant to Real-World Cars
 These nodes are required for operating the real cars.
 ### 2.1 FreiCar Agent
-The package in `base/freicar_agent` is the template node for all real-world agents. Currently, it:
+The package in `base/freicar_minimal_agent` is the template node for all real-world agents. Currently, it:
 
 - Sends a track request to the chaperone
 - Tries to obtain a pose from Vive tracking
