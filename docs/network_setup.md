@@ -45,6 +45,6 @@ If no SSH connection is possible, please check that the car is connected to the 
 1. Always remember to use a terminal where *ROS_MASTER_URI* and *ROS_IP* have been exported before for the following. Use `env | grep 'ROS'` to quickly check all ROS environment variables.
 2. Launch sensors on car ```roslaunch freicar_agent freicar_agent_hw.launch agent_name:=freicar_X``` (X is the number of your car)
 3. Start ```rviz``` on student computer, add respective topics and check for validity.
-4. Optionally start an agent `roslaunch freicar_agent freicar_agent.launch agent_name:=freicar_X`. See the launch file for other parameters.
+4. Optionally start an agent `roslaunch freicar_agent freicar_minimal_agent.launch agent_name:=freicar_X`. See the launch file for other parameters.
 
     **WARNING:** always place the car on a wood block and turn on the RC remote before launching untested agents. Please observe the [safety rules](../safety_rules).
