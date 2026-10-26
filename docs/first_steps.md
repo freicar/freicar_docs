@@ -6,22 +6,22 @@ This section explains how to start with developing in the FreiCar framework.
 
 The first time you want to start the FreiCar framework, you have to build all ROS packages:
 
-1. Go to `~/freicar_ws` and run `catkin build`.
-2. If the build fails due to missing dependencies, try running `caktin build` again. Due to interdependencies between FreiCAR packages, multiple builds may be necessary the first time.
-3. Once everything is built successfully, you have to re-source by typing `source devel/setup.bash`.
-2. To test the setup, you can try to start the simulator by launching ```start_carla.launch```. For this please read the [Simulator section](../simulator) section.
+1. Go to `~/freicar_ws` and run `colcon build --symlink-install`.
+2. If the build fails due to missing dependencies, try running `colcon build --symlink-install` again. Due to interdependencies between FreiCAR packages, multiple builds may be necessary the first time.
+3. Once everything is built successfully, you have to re-source by typing `source install/setup.bash`.
+4. Make sure that the ROS_DOMAIN_ID is set to your group number. You can check this by typing `echo $ROS_DOMAIN_ID`. If it is not set, you can set it by typing `export ROS_DOMAIN_ID=<your_group_number>`.
 
-Now that you have built everything, some tips on using `catkin` in the future:
+Now that you have built everything, some tips on using `colcon` in the future:
 
-- Run `catkin build --this` from any package directory to build only this package instead of the entire workspace.
-- If a package is causing trouble with the build (e.g. name collisions) and you're sure you don't need it for now, run `touch CATKIN_IGNORE` inside the **package root directory** to exclude it from future builds. This creates an empty file called `CATKIN_IGNORE`, which you can delete if you want to build the package again.
+- Run `colcon build --packages-select <package_name>` to build only one (or multiple) specific package(s) by name.
+- If a package is causing trouble with the build (e.g. name collisions) and you're sure you don't need it for now, run `touch COLCON_IGNORE` inside the **package root directory** to exclude it from future builds. This creates an empty file called `COLCON_IGNORE`, which you can delete if you want to build the package again.
 - If a build is failing without apparent reason, try to rebuild the entire workspace:
 
-        catkin clean
-        catkin build
-        source ~/freicar_ws/devel/setup.bash
+        colcon clean
+        colcon build --symlink-install
+        source ~/freicar_ws/install/setup.bash
 
-More details can be found in the [Catkin Cheatsheet](https://catkin-tools.readthedocs.io/en/latest/cheat_sheet.html).
+More details can be found in the [Colcon Readthedocs](https://colcon.readthedocs.io/en/released/user/quick-start.html).
 
 ## Programming Your Own Code
 

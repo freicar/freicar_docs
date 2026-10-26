@@ -11,16 +11,16 @@ Our docker container will provide most of the tools you need in a single contain
 Using the container feels like a virtual machine that does not have the performance limitations of traditional VMs.
 
 * Everytime when you want to use the environment you need start our container:
-Therefore type `fcc` (freicar container)in a new terminal. It will ask you for the password of the user freicar. Guess what, it is freicar. This container must run only in one terminal at a time!
+Therefore type `rcc` in a new terminal. This container must run only in one terminal at a time!
 
-* Everytime you want to open additional terminals that interact with the containerized environment just open a new terminal and type `fct` (freicar terminal). You will notice that the user changes to freicar.
+* Everytime you want to open additional terminals that interact with the containerized environment just open a new terminal and type `rct` (freicar terminal).
 
-* If you close the terminal where `fcc` is running, all sessions will terminate without warning! Using [tmux](https://en.wikipedia.org/wiki/Tmux) or [screen](https://en.wikipedia.org/wiki/GNU_Screen) is advised.
+* If you close the terminal where `rcc` is running, all sessions will terminate without warning! Using [tmux](https://en.wikipedia.org/wiki/Tmux) or [screen](https://en.wikipedia.org/wiki/GNU_Screen) is advised.
 
 The directory freicar_deps and freicar_ws are shared with your host. So every data that you create inside the docker within this directory can be read by the host, or vice versa. Additionally, only the data in these folders are persistent if you restart the docker environment. 
 
 ### Structure of ROS Workspace
-Within the FreiCar container a ROS Workspace `freicar_ws`  will already be setup. In the workspace two git submodules are placed that contain several ROS nodes: `base` and `drivers` (and optionally `executables`, which contains a closed-source carla demo agent).
+Within the FreiCar container a ROS2 Workspace `freicar_ws`  will already be setup. In the workspace two git submodules are placed that contain several ROS nodes: `base` and `drivers` (and optionally `executables`, which contains a closed-source carla demo agent).
 
 The `base` submodule contains some ROS modules that you need during the course.
 
@@ -30,15 +30,9 @@ NOTE: If there are updates to any submodules in the `docker` repository (e.g. if
 ### Persistent Changes to Docker Container
 Sometimes it becomes necessary to install additional libraries or packages if your program needs them. While you can install them in the docker container with `sudo apt-get install`, the changes would vanish as soon you stop the docker.
 
-However, you can make these changes persistent by executing the script `commit_changes.bash` before closing the docker container. This will keep all changes you made and the next time you start up the container (with `fcc`) you will have changed environment.
+However, you can make these changes persistent by executing the script `commit.sh` before closing the docker container. This will keep all changes you made and the next time you start up the container (with `rcc`) you will have changed environment.
 
-### IDEs
-In the container there are two IDEs pre-installed: pycharm and clion. The first is for developing in python and the latter in C++.
-Inside the docker you can simply type `pycharm` or `clion` to open the respective IDE. 
-
-Note in case of clion that you should register for an educational licence [here](https://www.jetbrains.com/community/education/#students) in order to be able to use it.
-
-## Installation
+## Installation (OUTDATED!;  TODO: update this section)
 This is a guide to setting up Docker and building a fresh FreiCAR image. As a participant in this course, Docker and the FreiCAR image will already be set up for you. Follow the usage guide above to start it. If you encounter issues with the environment, please **do not** attempt to install any drivers or rebuild the docker. Contact the course staff instead.
 
 To set up everything on your pc you will need:
