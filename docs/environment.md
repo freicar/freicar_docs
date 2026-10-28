@@ -35,7 +35,7 @@ However, you can make these changes persistent by executing the script `commit.s
 ## Installation (Will be updated soon)
 
 ### Carla Simulator (Up to date)
-To set up the Carla simulator, you need a PC with:
+To set up the Carla simulator, you need a PC with at least:
 
 * Ubuntu 20.04 LTS (64-bit)
 * NVIDIA GPU with at least 4GB of VRAM (e.g., GTX 1050 or better)
