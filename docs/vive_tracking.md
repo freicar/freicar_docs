@@ -28,11 +28,13 @@ We use an HTC Vive tracking setup to obtain indoor ground-truth localization for
    
 If one of the steps fail, first try restarting Steam and SteamVR. If the issue is still there, try rebooting freicar-base.
 
-## 3. Publish to ROS
-Note: different from the other computers, on freicar-base you do not need to run ROS commands inside the docker (**no** `fcc` or `fct` required!). So just open a regular terminal and:
+## 3. Publish to ROS2
+Note: different from the other computers, on freicar-base you do not need to run ROS commands inside the docker (**no** `rcc` or `rct` required!). So just open a regular terminal and:
 
-1. Start a ROS Core server: `roscore`
-2. In a seperate terminal, start the Vive tracking script: `rosrun freicar_vr_tracking vive_tracking.py`
-3. Run `rostopic list` to check that the odometry topic(s) are available. The poses are published to the `/tf` topic (if in doubt, check Rviz or [tf_echo](https://wiki.ros.org/tf/Debugging%20tools#tf_echo)).
+1. source the ROS2 environment: `source /opt/ros/jazzy/setup.bash`
+2. set the ROS2 domain ID to 70: `export ROS_DOMAIN_ID=70`
+2. you can then access all the ROS2 topics from your machines if you also set the same ROS_DOMAIN_ID on them. (We set 70 as the default when working with the tracking, please do not change it so everyone has a frictionless experience.)
+3. start the Vive tracking script: `ros2 run freicar_vr_tracking vive_tracking.py`
+4. Run `ros2 topic list`  in a separate sourced terminal to check that the odometry topic(s) are available. The poses are published to the `/tf` topic (if in doubt, check Rviz or TODO: UPDATE REFERENCE [tf_echo](https://wiki.ros.org/tf/Debugging%20tools#tf_echo)).
 
 Now the poses and odometry are available from every machine in the network. Just remember to do the [network setup](network_setup.md).

@@ -2,27 +2,27 @@
 
 ## Network Setup
 
-In order to run one of the real FreiCARs, setting up three machines is required. Overview:
+In order to run one of the real FreiCARs, setting up the correct environment is crucial.
+This involves setting the correct ROS_DOMAIN_ID to create a capsulated environment for your team, as well as starting a ROS2 Middleware service called Zenoh.
+**IMPORTANT** Keep in mind that while you are using the tracking all teams and cars share the same ROS_DOMAIN_ID. That means that in order to keep everything working, make sure that all your publishers, subscribers, topics, services and frames you might want to provide are prefixed with your car name. Overview:
 
-* **freicar-base**: Run the `roscore` and vive tracking. All nodes communicate via this machine.
+* The **freicar-base**: This is the machine that runs the Vive tracking and publishes the transforms in regards to the real-world cars.
 * Any **student computer**: For connecting to the car via ssh and running `rviz`. Other nodes may run here as well, but beware of network congestion if transmitting camera data.
 * Any **FreiCAR**: The agent and any other real-time critical control code or code that processes images and sensor data should be run directly on the car. Otherwise, network lag may cause nondeterministic bugs and other issues.
 
 Once Vive tracking is running, please proceed with the following steps to set up each of the machines:
 
 ### *freicar-base*
-The following describes sets up the ROS master and explains how to publish tracked cars.
+The following describes setting up the correct ROS_DOMAIN_ID.
 
-1. Optionally, check that the *ROS_IP* and *ROS_MASTER_URI* are set:
-2. ```echo $ROS_IP → 192.168.140.70```
-3. ```echo $ROS_MASTER_URI → http://192.168.140.70:11311```
-4. Start a ```roscore```
-5. In a different terminal, start GT tracking: ```rosrun freicar_vr_tracking vive_tracking.py```
-    - Restart if a new tracker was added
-    - IDs of trackers are set in: ```freicar_vr_tracking/param/reserved_trackers.yaml```
-8. To visualize the trackers, run rviz: ```rviz```
+0. source the ROS2 environment: ```source /opt/ros/jazzy/setup.bash```
+1. Optionally, check that the ROS_DOMAIN_ID is set to 70: ```echo $ROS_DOMAIN_ID``` (it should be 70 by default)
+2. TODO: Add in Zenoh setup
+2. If not, set it: ```export ROS_DOMAIN_ID=70```
+3. Start the Vive tracking script, after you have started SteamVR: ```ros2 run freicar_vr_tracking vive_tracking.py```
+4. To visualize the trackers, run rviz: ```rviz2```
 
-### *Student Computers*    
+### *Student Computers* (To be updated soon)   
 This lets you view published topics wrt. the ROS master that is running on *freicar-base*.
 
 1. Start/attach to docker: ```fcc``` / ```fct```
@@ -31,7 +31,7 @@ This lets you view published topics wrt. the ROS master that is running on *frei
 4. Check with ```rostopic list``` that you can connect to the master running on *freicar-base*.
 5. To visualize the trackers and other data, run rviz with the default config: ```rviz```
 
-### *FreiCARs*
+### *FreiCARs* (To be updated soon)
 Finally, [start](../starting_charging_etc/) one of the cars and:
 
 1. SSH from a student computer to the car via ```ssh freicar@freicarX (name of car)```.
@@ -41,7 +41,7 @@ If no SSH connection is possible, please check that the car is connected to the 
 4. ```export ROS_IP=192.168.140.XX``` (different for every car, e.g. .36 for freicar6 -> use ```ifconfig``` on car)
 (*ROS_MASTER_URI* is necessary for listening, *ROS_IP* for publishing a topic)
 
-## Test Setup
+## Test Setup (To be updated soon)
 1. Always remember to use a terminal where *ROS_MASTER_URI* and *ROS_IP* have been exported before for the following. Use `env | grep 'ROS'` to quickly check all ROS environment variables.
 2. Launch sensors on car ```roslaunch freicar_agent freicar_agent_hw.launch agent_name:=freicar_X``` (X is the number of your car)
 3. Start ```rviz``` on student computer, add respective topics and check for validity.
