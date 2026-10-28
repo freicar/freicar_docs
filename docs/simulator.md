@@ -14,6 +14,11 @@ If the check comes back with all "OK"'s, you are ready to go.
 The simulator needs always to run first if you want to start your own programs.
 There are some other maps you can load into the simulator. See the [Maps](#maps) section below for more information.
 
+Once you are done with the simulator, you can stop it by running:
+
+```./scripts/stop.sh```
+
+
 ### Launching a Simulated FreiCAR (and how to reset it)
 
 The car should already be spawned in the simulator. If you want to reset the car simply use the following script from the docker directory:
@@ -23,18 +28,18 @@ The car should already be spawned in the simulator. If you want to reset the car
 after a few seconds the car should be reset to its spawn position.
 
 Now start the [Rviz2](http://wiki.ros.org/rviz#Overview) tool to visualize the world and the cars sensors. You can add topics to rviz to visualize the data published on them. You can see which topics are available with `ros2 topic list`.
-All the relevant topics for the car are prefixed with `/freicar_X/` where `X` is the number of the car (1,2,3,...).
-CARLA sensor/state topics are prefixed with `/carla/freicar_X`.
+All the relevant topics for the car are prefixed with `/freicar_1/`. (All Simulators are using the same topic names, we only specified different ROS_DOMAIN_ID's for every student machine to separate the environments)
+CARLA sensor/state topics are prefixed with `/carla/freicar_1`.
 
 ### Controlling a Simulated FreiCAR
-The topic `/freicar_X/control` is especially interesting, since this is where you can publish throttle and steering commands to control the car. During the course, this will be done automatically by your ROS nodes, but for now you can experiment with the settings by entering:
+The topic `/freicar_1/control` is especially interesting, since this is where you can publish throttle and steering commands to control the car. During the course, this will be done automatically by your ROS nodes, but for now you can experiment with the settings by entering:
 
-`ros2 topic pub /freicar_X/control <TAB> <TAB>` (press TAB twice)
+`ros2 topic pub /freicar_1/control <TAB> <TAB>` (press TAB twice)
 
 The Auto-Completion should provide you with a message template looking like this:
 
 ```
-ros2 topic pub /freicar_X/control raiscar_msgs/msg/ControlCommand \
+ros2 topic pub /freicar_1/control raiscar_msgs/msg/ControlCommand \
 "header:
   stamp: {sec: 0, nanosec: 0}
   frame_id: ''
@@ -84,13 +89,15 @@ Preview | Map Name
 
 ## Spawn Poses
 
-In order to change the spawn pose of a car, you can simply edit `freicar.json` in the docker directory. The spawn pose is defined by the following parameters:
+In order to change the spawn pose of a car, you can simply edit `src/runtime/freicar_carla_ros2/config/freicar.json` in the docker directory. The spawn pose is defined by the following parameters:
 - x: x-coordinate of the spawn position in meters
 - y: y-coordinate of the spawn position in meters
 - z: z-coordinate of the spawn position in meters
 - roll: roll angle of the spawn pose in degrees
 - pitch: pitch angle of the spawn pose in degrees
 - yaw: yaw angle of the spawn pose in degrees
+
+Here you can also specify spawn poses for the other maps.
 ![angle_definition](https://github.com/JohanVer/freicar_docs/raw/master/images/angle_def.png "")  
    
 ### Reset to spawn pose

@@ -32,25 +32,26 @@ Sometimes it becomes necessary to install additional libraries or packages if yo
 
 However, you can make these changes persistent by executing the script `commit.sh` before closing the docker container. This will keep all changes you made and the next time you start up the container (with `rcc`) you will have changed environment.
 
-## Installation (OUTDATED!;  TODO: update this section)
-This is a guide to setting up Docker and building a fresh FreiCAR image. As a participant in this course, Docker and the FreiCAR image will already be set up for you. Follow the usage guide above to start it. If you encounter issues with the environment, please **do not** attempt to install any drivers or rebuild the docker. Contact the course staff instead.
+## Installation (Will be updated soon)
 
-To set up everything on your pc you will need:
+### Carla Simulator (Up to date)
+To set up the Carla simulator, you need a PC with:
+* Ubuntu 20.04 LTS (64-bit)
+* NVIDIA GPU with at least 4GB of VRAM (e.g., GTX 1050 or better)
+* NVIDIA driver version 450.80.02 or newer
+* Docker
 
-- A recent pc with a Nvidia GPU (better than GTX 1050 ti)
-- Ubuntu >=18.04
-- 100GB free space
+After you gain access to Repository (via a zip file or git clone), you only need the correct .egg file for the Carla Python API. You can find it on your student PC's in ~/freicar/freicar_carla_docker/carla_python_api/ . Otherwise you may have to build it from source.
+Then you simply have to do `./scripts/build.sh` in the `freicar_carla_docker` folder. This will build the docker image and set up the environment for you.
 
-In the following we describe the individual steps to make your pc ready!
+To run the Simulator, simply use:
 
-- Install the latest nvidia driver on your pc. We recommend to use at least version 450 (the newer the better).
-    - `sudo apt-get purge nvidia*` get rid of your old driver
-    - `sudo apt-get install nvidia-driver-460`
-    - restart your pc
-- Clone the following repo to your pc (the hdd should have 100 gb free to complete the docker build, as it will download a lot of dependencies)
-    - `git clone --recurse-submodules https://rlgit.informatik.uni-freiburg.de/freicar/docker.git`
-- enter the cloned repo : `cd docker`
-- install docker-ce and nvidia-docker with our script: `./install_docker.bash`
-- Restart your computer (otherwise the docker demon might not be started)
-- build the entire environment and download the simulator (this will take a while, >30min on a decent PC): `./setup.bash` (You will be asked for your sudo password at some point in order to install the docker image to your pc)
-- You are all set! :) 
+* `./scripts/start.sh` to start the simulator in a new terminal. This will start the Carla simulator in a separate window.
+* `./scripts/stop.sh` to stop the simulator. This will close the simulator window and stop the Carla server.
+* `./scripts/shell.sh` to open a shell in the docker container. This will give you access to the ROS workspace and all the tools you need.
+* `./scripts/commit.sh` to commit changes to the docker container. This will save any changes you made to the container, so you can use them next time you start the container.
+* `./scripts/list_maps.sh` to list all available maps in the Carla simulator. This will show you a list of maps that you can use in your experiments.
+* `./scripts/reset.sh` to reset the car's position in the Carla simulator. This will reset the car to its initial position in the map.
+
+### FreiCar Docker (Will follow soon)
+PASS
