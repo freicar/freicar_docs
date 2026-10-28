@@ -14,10 +14,10 @@ nav:
         - Safety: 'safety_rules.md'
         - Vive Tracking: 'vive_tracking.md'
         - Starting, Charging,..: 'starting_charging_etc.md'
-        - Chaperone: 'chaperone.md'
+#       - Chaperone: 'chaperone.md'
         - Remote Control: 'remote.md'
         - ROS Network Setup: 'network_setup.md'
-        - Ubuntu Installation: 'installation.md'
+#       - Ubuntu Installation: 'installation.md'
     - Car Assembly:
         - Subassemblies: 'assembly/index.md'
 #        - Subassembly - ESC: 'assembly/esc_case.md'
