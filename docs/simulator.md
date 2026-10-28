@@ -14,6 +14,30 @@ If the check comes back with all "OK"'s, you are ready to go.
 The simulator needs always to run first if you want to start your own programs.
 There are some other maps you can load into the simulator. See the [Maps](#maps) section below for more information.
 
+With:
+
+```./scripts/shell.sh```
+you can open a shell in the docker container to run your own ROS2 nodes.
+Or you can open a new terminal in VSCode, for that you first need to attach to the docker in VSCode and then do:
+```
+Command Palette → Preferences: Open Remote Settings (JSON)
+```
+and add the following line to the settings.json:
+```json
+{
+  "terminal.integrated.profiles.linux": {
+    "FreiCar ROS": {
+      "path": "/bin/bash",
+      "args": ["--rcfile", "/etc/freicar_ros_bashrc", "-i"]
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "FreiCar ROS",
+  "terminal.integrated.cwd": "/opt/ros_ws"
+}
+```
+Afterwards opening a new terminal in VSCode should open a shell in the docker container with the correct environment variables set.
+
+
 Once you are done with the simulator, you can stop it by running:
 
 ```./scripts/stop.sh```
