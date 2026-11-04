@@ -16,10 +16,10 @@ The environment READMEs contain the detailed build and runtime instructions.
 | ROS distribution | ROS 2 Jazzy | ROS 2 Foxy |
 | Runtime | Hardware development container | CARLA 0.9.11 container and a separate ROS 2 container |
 | Source directory in the development checkout | `freicar_docker/ws/src/` | `freicar_carla_docker/ros2_ws/src/` |
-| Workspace inside the ROS container | `/workspaces/ros2_ws` | `/opt/ros_ws` |
+| Workspace inside the ROS container | `/workspaces/freicar_ws` | `/opt/ros_ws` |
 | Default agent | `freicar_4` | `freicar_1` |
 | Command topic | `/<agent>/control_cmd` | `/<agent>/control` |
-| Default ROS domain | `70` | `0` |
+| Default ROS domain | `70` | `32` |
 | Middleware | `rmw_zenoh_cpp`, with a router started by the container | DDS middleware configured in the ROS image |
 
 Run each stack with its own sourced ROS environment. The defaults separate the
@@ -78,6 +78,9 @@ Simulator consumers that use timestamps should set `use_sim_time:=true` so that
 they use the bridge's `/clock`.
 
 ## 3. Nodes for real cars (`freicar_docker`)
+
+In general, avoid changing the nodes present in `base` and `freicar_ros2_drivers` without asking the Teaching Assistants.
+The exception to this are parameters in the hardware launchfiles, which can be tuned for your car (e.g. `use_lidar`, `use_zed`, `use_rf2o`, etc., or even hardcoding your agent name).
 
 ### 3.1 Hardware launch and sensors
 
@@ -159,9 +162,9 @@ pattern, not a complete autonomous controller. In the current `Drive()`
 implementation, localization checking is still a TODO and is bypassed.
 
 The `freicar_chaperone` directory contains legacy ROS 1 code and is excluded
-from colcon by `COLCON_IGNORE`. It is not an active ROS 2 safety service, and
-the current agent does not register through the old `Track` service. Do not
-assume the historical collision or boundary checks are running.
+from colcon by `COLCON_IGNORE`. It is not currently migrated to ROS2.
+<!-- the current agent does not register through the old `Track` service. Do not -->
+<!-- assume the historical collision or boundary checks are running. -->
 
 ## 4. Nodes for simulation (`freicar_carla_docker`)
 

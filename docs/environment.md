@@ -10,17 +10,17 @@ Our scripts add a few aliases to your bashrc. So after building everything close
 Our docker container will provide most of the tools you need in a single container.
 Using the container feels like a virtual machine that does not have the performance limitations of traditional VMs.
 
-* Everytime when you want to use the environment you need start our container:
+* Every time you want to use the environment you need to start our container:
 Therefore type `rcc` in a new terminal. This container must run only in one terminal at a time!
 
-* Everytime you want to open additional terminals that interact with the containerized environment just open a new terminal and type `rct` (freicar terminal).
+* Every time you want to open additional terminals that interact with the containerized environment just open a new terminal and type `rct` (freicar terminal).
 
 * If you close the terminal where `rcc` is running, all sessions will terminate without warning! Using [tmux](https://en.wikipedia.org/wiki/Tmux) or [screen](https://en.wikipedia.org/wiki/GNU_Screen) is advised.
 
-The directory freicar_deps and freicar_ws are shared with your host. So every data that you create inside the docker within this directory can be read by the host, or vice versa. Additionally, only the data in these folders are persistent if you restart the docker environment. 
+<!-- The directory freicar_deps and freicar_ws are shared with your host. So every data that you create inside the docker within this directory can be read by the host, or vice versa. Additionally, only the data in these folders are persistent if you restart the docker environment.  -->
 
 ### Structure of ROS Workspace
-Within the FreiCar container a ROS2 Workspace `freicar_ws`  will already be setup. In the workspace two git submodules are placed that contain several ROS nodes: `base` and `drivers` (and optionally `executables`, which contains a closed-source carla demo agent).
+Within the FreiCar container a ROS2 Workspace `freicar_ws`  will already be setup. In the workspace two git submodules are placed that contain several ROS nodes: `base` and `freicar_ros2_drivers` (and optionally `executables`, which contains a closed-source carla demo agent).
 
 The `base` submodule contains some ROS modules that you need during the course.
 
@@ -32,9 +32,9 @@ Sometimes it becomes necessary to install additional libraries or packages if yo
 
 However, you can make these changes persistent by executing the script `commit.sh` before closing the docker container. This will keep all changes you made and the next time you start up the container (with `rcc`) you will have changed environment.
 
-## Installation (Will be updated soon)
+## Installation
 
-### Carla Simulator (Up to date)
+### Carla Simulator
 To set up the Carla simulator, you need a PC with at least:
 
 * Ubuntu 20.04 LTS (64-bit)
@@ -42,7 +42,7 @@ To set up the Carla simulator, you need a PC with at least:
 * NVIDIA driver version 450.80.02 or newer
 * Docker
 
-After you gain access to Repository (via a zip file or git clone), you only need the correct .egg file for the Carla Python API. You can find it on your student PC's in ~/freicar/freicar_carla_docker/carla_python_api/ . Otherwise you may have to build it from source.
+After you gain access to the Repository (via a zip file or git clone), you only need the correct .egg file for the Carla Python API. You can find it on your student PC's in ~/freicar/freicar_carla_docker/carla_python_api/ . Otherwise you may have to build it from source.
 Then you simply have to do `./scripts/build.sh` in the `freicar_carla_docker` folder. This will build the docker image and set up the environment for you.
 
 To run the Simulator, simply use:
@@ -51,8 +51,15 @@ To run the Simulator, simply use:
 * `./scripts/stop.sh` to stop the simulator. This will close the simulator window and stop the Carla server.
 * `./scripts/shell.sh` to open a shell in the docker container. This will give you access to the ROS workspace and all the tools you need.
 * `./scripts/commit.sh` to commit changes to the docker container. This will save any changes you made to the container, so you can use them next time you start the container.
-* `./scripts/list_maps.sh` to list all available maps in the Carla simulator. This will show you a list of maps that you can use in your experiments.
+* `./scripts/list-maps.sh` to list all available maps in the Carla simulator. This will show you a list of maps that you can use in your experiments.
 * `./scripts/reset.sh` to reset the car's position in the Carla simulator. This will reset the car to its initial position in the map.
 
-### FreiCar Docker (Will follow soon)
-PASS
+### FreiCar Docker
+After you gain access to the repository (via a zip file or git clone), you need all the files from the `assets` folder on your student PC's in `~/freicar/freicar_docker/assets/`.
+Then you simply have to do `./scripts/build.sh` in the `freicar_docker` folder. This will build the docker image and set up the environment for you.
+
+To run the FreiCar environment, simply use:
+* `./scripts/start.sh` to start the FreiCar environment in a new terminal. This will start the docker container and give you access to the ROS workspace and all the tools you need. (On the robot this will also start the ROS2 Zenoh router, which is needed for the communication between the robot and the simulator, this means that this terminal will be occupied at all times, and closing this terminal will stop the router AND the docker container!)
+* to stop the container, simply close the terminal where you started it. This will stop the container and all running processes inside it.
+* `./scripts/attach.sh` to attach to the running container. This will give you access to the ROS workspace and all the tools you need.
+* `./scripts/commit.sh` to commit changes to the docker container. This will save any changes you made to the container, so you can use them next time you start the container.

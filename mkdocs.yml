@@ -1,3 +1,7 @@
+plugins:
+  - search
+  - mermaid2:
+      version: "11.4.1"
 site_name: FreiCar Docs
 nav:
     - Software:
@@ -28,3 +32,12 @@ nav:
         - Electronics: 'assembly/electronics.md'
 
 theme: readthedocs
+
+markdown_extensions:
+  - md_in_html
+
+extra_css:
+  - stylesheets/zenoh-diagrams.css
+
+extra_javascript:
+  - javascripts/zenoh-diagrams.js

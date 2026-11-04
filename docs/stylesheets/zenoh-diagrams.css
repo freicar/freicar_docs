@@ -1,0 +1,37 @@
+/* Scope the palette to the three network diagrams. Keep text fully opaque. */
+.zenoh-diagram {
+  --zenoh-client-color: #22863a;
+  --zenoh-peer-color: #1565c0;
+  padding: 1rem;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid rgba(80, 100, 120, 0.15);
+  border-radius: 0.6rem;
+  overflow-x: auto;
+}
+
+.zenoh-robots { background-color: rgba(33, 150, 243, 0.06); }
+.zenoh-tracking { background-color: rgba(255, 193, 7, 0.08); }
+.zenoh-combined { background-color: rgba(156, 39, 176, 0.06); }
+
+/* Mermaid block diagrams do not support flowchart linkStyle commands.
+ * Identify peer links by their absence of a student endpoint ID: the pinned
+ * renderer adds an arrow marker even to plain block links. */
+.zenoh-diagram svg path.flowchart-link {
+  stroke: var(--zenoh-client-color) !important;
+  stroke-width: 2px !important;
+  fill: none !important;
+}
+
+.zenoh-combined svg path.flowchart-link:not([id*="-S"]) {
+  stroke: var(--zenoh-peer-color) !important;
+  stroke-width: 5px !important;
+  stroke-dasharray: 1 10 !important;
+  stroke-linecap: round !important;
+  marker-start: none !important;
+  marker-end: none !important;
+}
+
+.zenoh-diagram svg marker path {
+  fill: var(--zenoh-client-color) !important;
+  stroke: var(--zenoh-client-color) !important;
+}
