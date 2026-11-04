@@ -123,7 +123,9 @@ Finally, [start](../starting_charging_etc/) one of the cars and:
     * With tracking active: `FREICAR_ZENOH_PEERS='["tcp/192.168.140.70:7447","tcp/192.168.140.32:7447","tcp/192.168.140.33:7447","tcp/192.168.140.34:7447"]'` (IP of freicar-base and all other cars except FreiCar 1) *IMPORTANT*: Do not list the PC's own IP address as a peer, as this will cause the Zenoh router to crash.
     * Without tracking active: `FREICAR_ZENOH_PEERS='["tcp/192.168.140.3X:7447","tcp/192.168.140.3Y:7447","tcp/192.168.140.3Z:7447"]` (IP of all other cars except the current one, replace X/Y/Z with the car numbers) *IMPORTANT*: Do not list the PC's own IP address as a peer, as this will cause the Zenoh router to crash.
 
-4. Start the docker container on the car: ```rcc``` (this will also start the Zenoh router)
+4. If you are not using the tracking, also set a unique ROS_DOMAIN_ID for your car in the `active.env` file, e.g. `ROS_DOMAIN_ID=31` for FreiCar 1, `ROS_DOMAIN_ID=32` for FreiCar 2, etc.
+
+5. Start the docker container on the car: ```rcc``` (this will also start the Zenoh router)
 
     *Keep this terminal open at all times, as closing it will stop the Zenoh router and the docker container!*
 
