@@ -1,9 +1,12 @@
-# Starting and Charging the Real Cars
+# Starting and Charging the Real Cars (TO BE UPDATED)
+
+Important: The new PC AC-Adapters need a little more care when connecting or disconnecting.
+
 
 ## **Powering on**
 
 *Power Panel*
-![Side_panel.png](./images/hardware_documentation/Side_panel.png)
+![Side_panel.png](./images/hardware_documentation/Charging_Ports.jpg)
 
 - Hold the motor button down for 1 ~ 2 seconds until it lights blue.
 - Switch the PC switch to *I* state or alternatively connect the adapter cable. Note that *II* state is unused.
