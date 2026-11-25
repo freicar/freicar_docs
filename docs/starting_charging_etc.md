@@ -11,7 +11,7 @@ Important: The new PC AC-Adapters need a little more care when connecting or dis
 - Hold the motor button down for 1 ~ 2 seconds until it lights blue.
 - Switch the PC switch to *I* state or alternatively connect the adapter cable. Note that *II* state is unused.
     
-    ![adapter_cable.jpg](./images/hardware_documentation/adapter_cable.jpg)
+    ![adapter_cable.jpg](./images/hardware_documentation/Charging_Cable.jpg.jpg)
     
 - The panel should look like below after powering on.
 
